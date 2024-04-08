@@ -9,18 +9,17 @@ import lombok.*;
 @ToString
 
 public class Producto {
-    private int id;
+    private Integer id;
     private String nombre;
     private double precio;
     private String proveedor;
     private String descripcion;
 
     public String comprobar() throws ProductoException {
-        if (null == id) {
+        if (id == null) { // Verificar si id es null
             throw new ProductoException("El producto no tiene asignado un id");
         } else {
             return toString();
         }
     }
-
 }

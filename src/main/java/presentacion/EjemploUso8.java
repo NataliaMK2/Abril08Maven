@@ -8,9 +8,11 @@ public class EjemploUso8 {
         public static void main(String[] args) {
             try {
                 Producto miProduct = new Producto(1, "Camiseta", 19.99, "Primark", "Camiseta de algodón");
+                Producto miProducto = new Producto();
 
 
                 miProduct.comprobar();
+                miProducto.comprobar();
 
                 System.out.println("El producto tiene asignado un ID.");
             } catch (ProductoException e) {

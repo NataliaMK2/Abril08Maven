@@ -4,27 +4,29 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
-
 public class Calculadora {
-        public static int suma(int a, int b) {
-            return a+b;
+    public double calcular(double num1, double num2, char operacion) {
+        double resultado = 0.0;
+        switch (operacion) {
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                if (num2 == 0) {
+                    throw new ArithmeticException("No se puede dividir por 0");
+                }
+                resultado = num1 / num2;
+                break;
+            default:
+                throw new IllegalArgumentException("error");
         }
-
-        public static int resta(int a, int b) {
-            return a-b;
-        }
-
-        public static int multiplica(int a, int b) {
-            return a*b;
-        }
-
-        public static double divide(int a, int b) {
-            if (b == 0) {
-                throw new IllegalArgumentException("El divisor no puede ser cero");
-            }
-            return (double) a / b;
-        }
+        return resultado;
     }
-
+}
 

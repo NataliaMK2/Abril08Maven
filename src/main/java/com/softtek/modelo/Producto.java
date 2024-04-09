@@ -1,25 +1,20 @@
 package com.softtek.modelo;
 import lombok.*;
 
-@NoArgsConstructor
+
 @AllArgsConstructor
 @Data
-@Setter
-@Getter
-@ToString
 
-public class Producto {
-    private Integer id;
+public final class Producto {
+    public static int CONTADOR=0;
+    private final int ID;
     private String nombre;
     private double precio;
-    private String proveedor;
-    private String descripcion;
-
-    public String comprobar() throws ProductoException {
-        if (id == null) { // Verificar si id es null
-            throw new ProductoException("El producto no tiene asignado un id");
-        } else {
-            return toString();
-        }
+    public Producto(){
+        this.ID=++CONTADOR;
     }
-}
+    public double importe(int cantidad) {
+        return cantidad * precio;
+
+
+    }}

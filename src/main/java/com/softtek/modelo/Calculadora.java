@@ -1,4 +1,10 @@
 package com.softtek.modelo;
+import lombok.*;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 
 public class Calculadora {
     public double calcular(double num1, double num2, char operacion) {
